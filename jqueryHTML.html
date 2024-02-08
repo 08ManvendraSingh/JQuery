@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+		.pink {
+			color:cyan;
+		}
+		.font{
+			font-style: italic;
+		}
+	</style>
+</head>
+<body>
+	<!-- JQuery HTML -->
+	<div class="bx" style="background-color:lightpink; width: 500px; text-align: center; height: 100px;">
+		<h1>Hellow World</h1>
+		<p>Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Aut, vero!</p>
+	</div>
+		<input type="text" id="val">
+		<button id="valget">valget</button>
+		<input type="text" id="val2">
+		<button id="valset">valset</button>
+		<button id="appendbtn">append</button>
+		<button id="prependbtn">prepend</button>
+		<button id="appendtobtn">appendto</button>
+		<button id="prependtobtn">prependto</button>
+		<button id="beforebtn">before</button>
+		<button id="afterbtn">after</button>
+		<button id="removebtn">remove</button>
+		<button id="emptybtn">empty</button>
+		<button id="addclassbtn">addclass</button>
+		<button id="removeclassbtn">removeclass</button>
+		<button id="toggleclassbtn">toggleclass</button>
+		<button id="cssbtn">css</button>
+
+
+		
+
+
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+	<script type="text/javascript">
+
+		// 1.get content
+		// 1.1 text()
+		$(document).ready(function(){
+			var a=$('.bx').text();
+			console.log(a);
+		})
+		// 1.2 html()
+		$(document).ready(function(){
+			var a=$('.bx').html();
+			console.log(a);
+		})
+		// 1.3 val()
+		$(document).ready(function(){
+			$('#valget').click(function() {
+				var a=$('#val').val();
+				console.log(a);
+			})
+		})
+		// 1.4 attr()
+		$(document).ready(function(){
+		   var a=$('#val').attr('type');
+			console.log(a);
+		})
+
+// ---------------------------------------------------------------------------------------
+
+		// 2.set content
+		// 2.1 text()
+		$(document).ready(function(){
+			$('#valset').click(function(){
+				$('.bx h1').text('Welcome');
+			})
+		})
+		// 2.2 html()
+		$(document).ready(function(){
+			$('#valset').click(function(){
+				$('.bx p').html('<mark>Lorem ipsum gipsum</mark>')
+			})
+		})
+		// 2.3 val()
+		$(document).ready(function(){
+			$('#valset').click(function(){
+				$('#val2').val('enter your na-me');
+			})
+		})
+		// 2.4 attr()[set single attribute]
+		$(document).ready(function(){
+			$('#valset').click(function(){
+				$('#val2').attr('type','password');
+			})
+		})
+		// 2.5 attr()[set more than one attribute]
+		$(document).ready(function(){
+			$('#valset').click(function(){
+				$('#val2').attr({"type":'number','placeholder':'enter age'});
+			})
+		})
+
+// -------------------------------------------------------------------------------------
+
+		// 3.add new html content
+		// 3.1 append()[using html]
+		$(document).ready(function(){
+			$('#appendbtn').click(function(){
+				$('.bx').append('<h1><cent>Hi Everyone</cent></h1>')
+			})
+		})
+		// 3.2append()[using jquery]
+		$(document).ready(function(){
+			$('#appendbtn').click(function(){
+				var a=$('<p></p>').text('Hi Everyone');
+			$('.bx').append(a);
+			})
+		})		
+
+// -------------------------------------------------------------------------------------
+
+		// 4.add new html content
+		// 4.1 prepend()[using html]
+		$(document).ready(function(){
+			$('#prependbtn').click(function(){
+				$('.bx').prepend('<h1><cent>Hi Everyone</cent></h1>')
+			})
+		})
+		// 4.2 prepend()[using jquery]
+		$(document).ready(function(){
+			$('#prependbtn').click(function(){
+				var a=$('<p></p>').text('Hi Everyone');
+			$('.bx').prepend(a);
+			})
+		})		
+
+// -------------------------------------------------------------------------------------
+
+		// 5.add new html content
+		// 5.1 appendto()[using html]
+		$(document).ready(function(){
+			$('#appendtobtn').click(function(){
+				$('<h1><cent>Hi Everyone</cent></h1>').appendTo(".bx")
+			})
+		})
+		// 5.2appendto()[using jquery]
+		$(document).ready(function(){
+			$('#appendtobtn').click(function(){
+				var a=$('<p></p>').text('Hi Everyone');
+			$(a).appendTo('.bx');
+			})
+		})	
+
+// -------------------------------------------------------------------------------------
+
+		// 6.add new html content
+		// 6.1 prependto()[using html]
+		$(document).ready(function(){
+			$('#prependtobtn').click(function(){
+				$('<h1><cent>Hi Everyone</cent></h1>').prependTo('.bx')
+			})
+		})
+		// 6.2 prependto()[using jquery]
+		$(document).ready(function(){
+			$('#prependtobtn').click(function(){
+				var a=$('<p></p>').text('Hi Everyone');
+			$(a).prependTo('.bx');
+			})
+		})
+
+// -------------------------------------------------------------------------------------
+
+		// 7.add new html content
+		// 7.1 after()[using html]
+		$(document).ready(function(){
+			$('#afterbtn').click(function(){
+				$('.bx').after('<h1><cent>Hi Everyone</cent></h1>')
+			})
+		})
+		// 7.2after()[using jquery]
+		$(document).ready(function(){
+			$('#afterbtn').click(function(){
+				var a=$('<p></p>').text('Hi Everyone');
+			$('.bx').after(a);
+			})
+		})
+
+// -------------------------------------------------------------------------------------
+
+		// 8.add new html content
+		// 8.1 before()[using html]
+		$(document).ready(function(){
+			$('#beforebtn').click(function(){
+				$('.bx').before('<h1><cent>Hi Everyone</cent></h1>')
+			})
+		})
+		// 8.2before()[using jquery]
+		$(document).ready(function(){
+			$('#beforebtn').click(function(){
+				var a=$('<p></p>').text('Hi Everyone');
+			$('.bx').before(a);
+			})
+		})
+
+// -------------------------------------------------------------------------------------
+
+		// 9.remove existing html element
+		// 9.1 remove()[without parameter]
+		$(document).ready(function(){
+			$('#removebtn').click(function() {
+				$('.bx').remove();
+			})
+		})
+		// 9.2 remove()[with parameter]
+		$(document).ready(function(){
+			$('#removebtn').click(function() {
+				$('p').remove(".bx p");
+			})
+		})
+
+// -------------------------------------------------------------------------------------
+
+		// 10.empty existing html element
+		// 10.1 empty()[without parameter]
+		$(document).ready(function(){
+			$('#emptybtn').click(function() {
+				$('.bx').empty();
+			})
+		})
+
+// -------------------------------------------------------------------------------------
+
+		// 11.css class
+		// 11.1 addclass()
+		$(document).ready(function(){
+			$('#addclassbtn').click(function(){
+				$('.bx').addClass('pink');
+			});
+		})
+		// 11.2 addclass()[add two or more class]
+		$(document).ready(function(){
+			$('#addclassbtn').click(function(){
+				$('.bx').addClass('pink font');
+			});
+		})
+
+// ---------------------------------------------------------------------------------
+
+		// 12.css class
+		// 12.1 removeclass()[without parameter]
+		$(document).ready(function(){
+			$('#removeclassbtn').click(function(){
+				$('.bx').removeClass();
+			});
+		})
+		// 12.2 removeclass()[with parameter]
+		$(document).ready(function(){
+			$('#removeclassbtn').click(function(){
+				$('.bx').removeClass('pink');
+			});
+		})
+		// 12.3 removeclass()[add two or more class]
+		$(document).ready(function(){
+			$('#removeclassbtn').click(function(){
+				$('.bx').removeClass('pink font');
+			});
+		})
+
+// ---------------------------------------------------------------------------------
+
+		// 13.css class
+		// 13.1 toggleclass()[with parameter]
+		$(document).ready(function(){
+			$('#toggleclassbtn').click(function(){
+				$('.bx').toggleClass('pink');
+			});
+		})
+		// 13.2 toggleclass()[add two or more class]
+		$(document).ready(function(){
+			$('#toggleclassbtn').click(function(){
+				$('.bx').toggleClass('pink font');
+			});
+		})
+
+// ---------------------------------------------------------------------------------
+
+		// 14. css class
+		// 14.1 css()[set single property]
+		$(document).ready(function(){
+			$('#cssbtn').click(function(){
+				$('.bx').css('color','red');
+			})
+		})
+		// 14.2 css()[set more than one property]
+		$(document).ready(function(){
+			$('#cssbtn').click(function(){
+				$('.bx').css({'color':'red','border':'5px dotted green'});
+			})
+		})
+		// 14.3 css()[get css property]
+		$(document).ready(function(){
+			$('#cssbtn').click(function(){
+				alert("background ="+$('.bx').css('background-color'));
+			})
+		})
+
+
+	</script>
+
+
+</body>
+</html>

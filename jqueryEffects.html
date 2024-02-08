@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<!-- Jquery Effects -->
+	<h1 id="heading" style="background-color:lightpink;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat veritatis et.</h1>
+	<button id="hidebtn">hide</button>
+	<button id="showbtn">show</button>
+	<button id="togglebtn">toggle</button>
+	<button id="fadeoutbtn">fadeout</button>
+	<button id="fadeinbtn">fadein</button>
+	<button id="fadetogglebtn">fadetoggle</button>
+	<button id="fadetobtn">fadeto</button>
+	<button id="slideupbtn">slideup</button>
+	<button id="slidedownbtn">slidedown</button>
+	<button id="slidetogglebtn">slidetoggle</button>
+	<button id="chainingbtn">chaining</button>
+	<button id="stopbtn">stop</button>
+	<button id="animatebtn">animate</button>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script>
+		// 1.hide()[without parameters]
+		$(document).ready(function(){
+			$('#hidebtn').click(function(){
+				$('#heading').hide();
+			})
+		})
+		// hide()[with single parameters]
+		// 1.1 slow
+		$(document).ready(function(){
+			$('#hidebtn').click(function(){
+				$('#heading').hide('slow');
+			})
+		})
+		// 1.2 fast
+		$(document).ready(function(){
+			$('#hidebtn').click(function(){
+				$('#heading').hide('fast');
+			})
+		})
+		// 1.3 miliseconds
+		$(document).ready(function(){
+			$('#hidebtn').click(function(){
+				$('#heading').hide(2000);
+			})
+		})
+		// 1.4 callback function
+		$(document).ready(function(){
+			$('#hidebtn').click(function(){
+				$('#heading').hide(function(){
+					console.log('hi');
+				});
+			})
+		})
+		// hide()[with double parameters]
+		$(document).ready(function(){
+			$('#hidebtn').click(function(){
+				$('#heading').hide('slow',function(){
+					alert('your heading is hidden')
+				});
+			})
+		})
+
+// -------------------------------------------------------------------------------------
+
+		// 2.show()[without parameters]
+		$(document).ready(function(){
+			$('#showbtn').click(function(){
+				$('#heading').show();
+			})
+		})
+		// 2.1 slow[with single parameters]
+		$(document).ready(function(){
+			$('#showbtn').click(function(){
+				$('#heading').show('slow');
+			})
+		})
+		// 2.2 fast
+		$(document).ready(function(){
+			$('#showbtn').click(function(){
+				$('#heading').show('fast');
+			})
+		})
+		// 2.3 miliseconds
+		$(document).ready(function(){
+			$('#showbtn').click(function(){
+				$('#heading').show(2000);
+			})
+		})
+	    // 2.4 callback function
+		$(document).ready(function(){
+			$('#showbtn').click(function(){
+				$('#heading').show(function(){
+					console.log('hi');
+				});
+			})
+		})
+		// hide()[with double parameters]
+		$(document).ready(function(){
+			$('#showbtn').click(function(){
+				$('#heading').show('slow',function(){
+					alert('your heading is visible')
+				});
+			})
+		})
+
+// -------------------------------------------------------------------------------------
+
+		// 3.toggle()[without parameters]
+		$(document).ready(function(){
+			$('#togglebtn').click(function(){
+				$('#heading').toggle();
+			})
+		})
+		// 3.1 slow[with single parameters]
+		$(document).ready(function(){
+			$('#togglebtn').click(function(){
+				$('#heading').toggle('slow');
+			})
+		})
+		// 3.2 fast
+		$(document).ready(function(){
+			$('#togglebtn').click(function(){
+				$('#heading').toggle('fast');
+			})
+		})
+		// 3.3 miliseconds
+		$(document).ready(function(){
+			$('#togglebtn').click(function(){
+				$('#heading').toggle(2000);
+			})
+		})
+	    // 3.4 callback function
+		$(document).ready(function(){
+			$('#togglebtn').click(function(){
+				$('#heading').toggle(function(){
+					console.log('hi');
+				});
+			})
+		})
+		// hide()[with double parameters]
+		$(document).ready(function(){
+			$('#togglebtn').click(function(){
+				$('#heading').toggle('slow',function(){
+					alert('toggle apply')
+				});
+			})
+		})
+
+// -------------------------------------------------------------------------------------
+
+		// 4.foadeout()[without parameter]
+		$(document).ready(function(){
+			$('#fadeoutbtn').click(function(){
+				$('#heading').fadeOut();
+			})
+		})
+		// 4.1 slow[with single parameters]
+		$(document).ready(function(){
+			$('#fadeoutbtn').click(function(){
+				$('#heading').fadeOut('slow');
+			})
+		})
+		// 4.2 fast
+		$(document).ready(function(){
+			$('#fadeoutbtn').click(function(){
+				$('#heading').fadeOut('fast');
+			})
+		})
+		// 4.3 miliseconds
+		$(document).ready(function(){
+			$('#fadeoutbtn').click(function(){
+				$('#heading').fadeOut(3000);
+			})
+		})
+		// 4.4 callback function
+		$(document).ready(function(){
+			$('#fadeoutbtn').click(function(){
+				$('#heading').fadeOut(2000,function(){
+					alert('fadeOut apply');
+				})
+			})
+		})
+		// fadeout()[with double parameters]
+		$(document).ready(function(){
+			$('#fadeoutbtn').click(function(){
+				$('#heading').fadeOut('slow',function(){
+					alert('hey');
+				})
+			})
+		})
+
+// -------------------------------------------------------------------------------------
+
+		// 5.foadein()[without parameter]
+		$(document).ready(function(){
+			$('#fadeinbtn').click(function(){
+				$('#heading').fadeIn();
+			})
+		})
+		// 5.1 slow[with single parameters]
+		$(document).ready(function(){
+			$('#fadeinbtn').click(function(){
+				$('#heading').fadeIn('slow');
+			})
+		})
+		// 5.2 fast
+		$(document).ready(function(){
+			$('#fadeinbtn').click(function(){
+				$('#heading').fadeIn('fast');
+			})
+		})
+		// 5.3 miliseconds
+		$(document).ready(function(){
+			$('#fadeinbtn').click(function(){
+				$('#heading').fadeIn(3000);
+			})
+		})
+		// 5.4 callback function
+		$(document).ready(function(){
+			$('#fadeinbtn').click(function(){
+				$('#heading').fadeIn(2000,function(){
+					alert('fadein apply');
+				})
+			})
+		})
+		// fadein()[with double parameters]
+		$(document).ready(function(){
+			$('#fadeinbtn').click(function(){
+				$('#heading').fadeIn('slow',function(){
+					alert('hey');
+				})
+			})
+		})
+
+// -------------------------------------------------------------------------------------
+
+		// 6.foadetoggle()[without parameter]
+		$(document).ready(function(){
+			$('#fadetogglebtn').click(function(){
+				$('#heading').fadeToggle();
+			})
+		})
+		// 6.1 slow[with single parameters]
+		$(document).ready(function(){
+			$('#fadetogglebtn').click(function(){
+				$('#heading').fadeToggle('slow');
+			})
+		})
+		// 6.2 fastb
+		$(document).ready(function(){
+			$('#fadetogglebtn').click(function(){
+				$('#heading').fadeToggle('fast');
+			})
+		})
+		// 6.3 miliseconds
+		$(document).ready(function(){
+			$('#fadetogglebtn').click(function(){
+				$('#heading').fadeToggle(3000);
+			})
+		})
+		// 6.4 callback function
+		$(document).ready(function(){
+			$('#fadetogglebtn').click(function(){
+				$('#heading').fadeToggle(2000,function(){
+					alert('fadetoggle apply');
+				})
+			})
+		})
+		// fadetoggle()[with double parameters]
+		$(document).ready(function(){
+			$('#fadetogglebtn').click(function(){
+				$('#heading').fadeToggle('slow',function(){
+					alert('hey');
+				})
+			})
+		})
+
+// -------------------------------------------------------------------------------------
+
+
+		// 7.foadeto()
+		// 7.1 slow[with double parameters]
+		$(document).ready(function(){
+			$('#fadetobtn').click(function(){
+				$('#heading').fadeTo('slow',0.3);
+			})
+		})
+		//7.2 fast
+		$(document).ready(function(){
+			$('#fadetobtn').click(function(){
+				$('#heading').fadeTo('fast',.5);
+			})
+		})
+		// 7.3 miliseconds
+		$(document).ready(function(){
+			$('#fadetobtn').click(function(){
+				$('#heading').fadeTo(3000,.1);
+			})
+		})
+		// 7.4 callback function
+		$(document).ready(function(){
+			$('#fadetobtn').click(function(){
+				$('#heading').fadeTo(2000,.7,function(){
+					alert('fadeto apply');
+				})
+			})
+		})
+		// fadeto()[with tripple parameters]
+		$(document).ready(function(){
+			$('#fadetobtn').click(function(){
+				$('#heading').fadeTo('slow',.6,function(){
+					alert('hey');
+				})
+			})
+		})
+
+// -------------------------------------------------------------------------------------
+
+		// 8.slideup()[without parameter]
+		$(document).ready(function(){
+			$('#slideupbtn').click(function(){
+				$('#heading').slideUp();
+			})
+		})
+		// 8.1 slow[with single parameters]
+		$(document).ready(function(){
+			$('#slideupbtn').click(function(){
+				$('#heading').slideUp('slow');
+			})
+		})
+		// 8.2 fast
+		$(document).ready(function(){
+			$('#slideupbtn').click(function(){
+				$('#heading').slideUp('fast');
+			})
+		})
+		// 8.3 miliseconds
+		$(document).ready(function(){
+			$('#slideupbtn').click(function(){
+				$('#heading').slideUp(3000);
+			})
+		})
+		// 8.4 callback function
+		$(document).ready(function(){
+			$('#slideupbtn').click(function(){
+				$('#heading').slideUp(2000,function(){
+					alert('slideup apply');
+				})
+			})
+		})
+		// slideup()[with double parameters]
+		$(document).ready(function(){
+			$('#slideupbtn').click(function(){
+				$('#heading').slideUp('slow',function(){
+					alert('hey');
+				})
+			})
+		})
+
+// -------------------------------------------------------------------------------------
+
+		// 9.slidedown()[without parameter]
+		$(document).ready(function(){
+			$('#slidedownbtn').click(function(){
+				$('#heading').slideDown();
+			})
+		})
+		// 9.1 slow[with single parameters]
+		$(document).ready(function(){
+			$('#slidedownbtn').click(function(){
+				$('#heading').slideDown('slow');
+			})
+		})
+		// 9.2 fast
+		$(document).ready(function(){
+			$('#slidedownbtn').click(function(){
+				$('#heading').slideDown('fast');
+			})
+		})
+		// 9.3 miliseconds
+		$(document).ready(function(){
+			$('#slidedownbtn').click(function(){
+				$('#heading').slideDown(3000);
+			})
+		})
+		// 9.4 callback function
+		$(document).ready(function(){
+			$('#slidedownbtn').click(function(){
+				$('#heading').slideDown(2000,function(){
+					alert('slidedown apply');
+				})
+			})
+		})
+		// slidedown()[with double parameters]
+		$(document).ready(function(){
+			$('#slidedownbtn').click(function(){
+				$('#heading').slideDown('slow',function(){
+					alert('hey');
+				})
+			})
+		})
+
+// -------------------------------------------------------------------------------------
+
+		// 10.slidetoggle()[without parameter]
+		$(document).ready(function(){
+			$('#slidetogglebtn').click(function(){
+				$('#heading').slideToggle();
+			})
+		})
+		// 10.1 slow[with single parameters]
+		$(document).ready(function(){
+			$('#slidetogglebtn').click(function(){
+				$('#heading').slideToggle('slow');
+			})
+		})
+		// 10.2 fast
+		$(document).ready(function(){
+			$('#slidetogglebtn').click(function(){
+				$('#heading').slideToggle('fast');
+			})
+		})
+		// 10.3 miliseconds
+		$(document).ready(function(){
+			$('#slidetogglebtn').click(function(){
+				$('#heading').slideToggle(3000);
+			})
+		})
+		// 10.4 callback function
+		$(document).ready(function(){
+			$('#slidetogglebtn').click(function(){
+				$('#heading').slideToggle(2000,function(){
+					alert('slidetoggle apply');
+				})
+			})
+		})
+		// slidetoggle()[with double parameters]
+		$(document).ready(function(){
+			$('#slidetogglebtn').click(function(){
+				$('#heading').slideToggle('slow',function(){
+					alert('hey');
+				})
+			})
+		})
+
+// -------------------------------------------------------------------------------------
+
+		// methods chaining
+		$(document).ready(function(){
+			$('#chainingbtn').click(function(){
+				$('#heading').slideUp(2000).slideDown(1000).fadeOut(3000).fadeIn(2000);
+			})
+		})
+
+// -------------------------------------------------------------------------------------
+
+		// 11.stop()[without parameter]
+		$(document).ready(function(){
+			$('#slideupbtn').click(function(){
+				$('#heading').slideUp(3000);
+			});
+			$('#stopbtn').click(function(){
+				$('#heading').stop();
+			})
+		})
+		// 11.1 stopall[with single parameter]
+		$(document).ready(function(){
+			$('#slideupbtn').click(function(){
+				$('#heading').slideUp(3000);
+			});
+			$('#stopbtn').click(function(){
+				$('#heading').stop(true);
+			})
+		})
+		// 11.2 stopend[with double parameter]
+		$(document).ready(function(){
+			$('#slideupbtn').click(function(){
+				$('#heading').slideUp(5000).slideDown(4000);
+			});
+			$('#stopbtn').click(function(){
+				$('#heading').stop(true,true);
+			})
+		})
+
+// -------------------------------------------------------------------------------------
+
+		// 12 animate()
+		$(document).ready(function(){
+			$('#animatebtn').click(function(){
+				$('#heading').animate({width:'+=100px',marginLeft:'100px'});
+			})
+		})
+		// animate()[uses queue functionality]
+		$(document).ready(function(){
+			$('#animatebtn').click(function(){
+		$('#heading').animate({width:'+=100px'}).animate({height:'+=200px'});
+			})
+		})
+		// animate()[using pre-defined values]
+		$(document).ready(function(){
+			$('#animatebtn').click(function(){
+				$('#heading').animate({width:'toggle'});
+			})
+		})
+		// 12.1 slow
+		$(document).ready(function(){
+			$('#animatebtn').click(function(){
+				$('#heading').animate({height:'+=100px'},'slow');
+			})
+		})
+		// 12.2 fast
+		$(document).ready(function(){
+			$('#animatebtn').click(function(){
+				$('#heading').animate({height:'+=100px'},'fast');
+			})
+		})
+		// 12.3 miliseconds
+		$(document).ready(function(){
+			$('#animatebtn').click(function(){
+				$('#heading').animate({height:'+=100px'},3000);
+			})
+		})	
+		// 12.4 callback function
+		$(document).ready(function(){
+			$('#animatebtn').click(function(){
+				$('#heading').animate({height:'+=200px'},2000,function(){
+					alert('animate apply');
+				})
+			})
+		})
+
+
+
+
+
+
+	</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<meta charset="utf-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<title></title>
+ </head>
+ <body>
+ 
+	<div id="bx" style="width: 100px; height: 100px; background-color: #222;">
+		<h1 style="font-size: 1rem; color:orange;">Hello_World</h1>
+	</div> 
+	<button id="btn">click</button>
+ 	<!-- MouseEvents -->
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+ 	<script>
+ 		// 1.click()
+ 		$(document).ready(function(){
+ 			$('#btn').click(function(){
+ 				$('#bx').hide();
+ 			})
+ 		})
+ 		// 2.dblclick()
+ 		$(document).ready(function(){
+ 			$('#btn').dblclick(function(){
+ 				$('#bx').show();
+ 			})
+ 		})
+ 		// 3.contextmenu()
+ 		$(document).ready(function(){
+ 		    $('#btn').contextmenu(function(){
+ 		    	$('#bx').hide();
+ 			})
+ 		})
+ 		// 4.mouseenter()
+ 		$(document).ready(function(){
+ 			$('#btn').mouseenter(function(){
+ 				$('#bx').show();
+ 			})
+ 		})
+ 		// 5.mouseleave()
+ 		$(document).ready(function(){
+ 			$('#btn').mouseleave(function(){
+ 				$('#bx').hide();
+ 			})
+ 		})
+ 	</script>
+
+ </body>
+ </html>
